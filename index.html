@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bagus &amp; Shecillia</title>
+<meta name="theme-color" content="#F7F3EF">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+<!-- ============ GATE ============ -->
+<main id="gate" class="gate" aria-labelledby="gateTitle">
+  <div class="gate-blobs" aria-hidden="true">
+    <div class="blob blob--yellow gate-blob-a"><div class="eyes"><i></i><i></i></div></div>
+    <div class="blob blob--pink gate-blob-b"><div class="eyes"><i></i><i></i></div></div>
+    <div class="blob blob--mint gate-blob-c"></div>
+  </div>
+  <form id="gateForm" class="gate-card" autocomplete="off" novalidate>
+    <div class="logo"><span class="logo-mark"><i></i><i></i></span><span class="logo-text">bagus &amp; shecil<small>since 09.12.2024</small></span></div>
+    <h1 id="gateTitle" class="gate-title">Masuk dulu,<br>ini khusus berdua.</h1>
+    <label class="field"><span>Username</span><input id="gateUser" name="user" type="text" spellcheck="false" autocapitalize="off" required></label>
+    <label class="field"><span>Password</span>
+      <span class="field-row"><input id="gatePass" name="pass" type="password" inputmode="numeric" required><button type="button" class="peek" id="peekBtn" aria-label="Lihat password">lihat</button></span>
+    </label>
+    <p id="gateError" class="gate-error" role="alert"></p>
+    <button class="btn btn--dark" type="submit">Masuk <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="gate-hint">Hint: tanggal jadian, 6 angka.</p>
+  </form>
+</main>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" hidden aria-live="polite">
+  <div class="loader-stage" aria-hidden="true">
+    <div class="loader-blob"><div class="eyes eyes--big"><i></i><i></i></div><span class="loader-cheek l"></span><span class="loader-cheek r"></span></div>
+    <div class="loader-shadow"></div>
+  </div>
+  <p class="loader-text" id="loaderText">nyiapin kenangan…</p>
+  <div class="loader-bar"><span id="loaderBar"></span></div>
+  <p class="loader-pct" id="loaderPct">0%</p>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <a class="logo" href="#/" aria-label="Ke beranda"><span class="logo-mark"><i></i><i></i></span><span class="logo-text">bagus &amp; shecil</span></a>
+    <nav class="nav" id="nav" aria-label="Navigasi">
+      <a href="#/">Beranda</a><a href="#/cerita">Cerita</a><a href="#/profil">Profil</a><a href="#/galeri">Galeri</a><a href="#/kuis">Kuis</a><a href="#/surat">Surat</a>
+      <button class="nav-out" id="logoutBtn" type="button">Keluar</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </header>
+
+  <!-- HERO -->
+  <section class="view hero" data-view="home" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow" data-reveal>sejak 9 desember 2024</p>
+      <h1 class="hero-title" data-reveal style="--d:1">Dua orang,<br>satu arah.</h1>
+      <p class="hero-lead" data-reveal style="--d:2"><span id="greeting">Hai.</span> Jarak Jakarta–Riau bukan halangan, selama hati kita jalan ke arah yang sama.</p>
+      <div class="hero-cta" data-reveal style="--d:3">
+        <a class="btn btn--dark" href="#/kuis">Main kuisnya <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="#/galeri">Lihat galeri <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob blob--yellow hero-blob-back"></div>
+      <div class="blob blob--cream hero-blob-front"><div class="eyes eyes--big"><i></i><i></i></div></div>
+      <div class="blob blob--pink hero-blob-small"><div class="eyes"><i></i><i></i></div></div>
+    </div>
+    <div class="counter" data-reveal style="--d:4" aria-label="Lama kita bareng">
+      <p class="counter-label">sudah bareng</p>
+      <div class="counter-grid">
+        <div><b id="cDays">0</b><span>hari</span></div>
+        <div><b id="cHours">00</b><span>jam</span></div>
+        <div><b id="cMins">00</b><span>menit</span></div>
+        <div><b id="cSecs">00</b><span>detik</span></div>
+      </div>
+    </div>
+    <nav class="menu-cards" aria-label="Menu">
+      <a class="mcard" href="#/cerita" data-reveal style="--d:5"><span class="mcard-blob blob--blue"><span class="eyes"><i></i><i></i></span></span><b>Cerita</b><small>Dari lorong kampus sampai Riau–Jakarta</small><span class="mcard-go">→</span></a>
+      <a class="mcard" href="#/profil" data-reveal style="--d:6"><span class="mcard-blob blob--pink"><span class="eyes"><i></i><i></i></span></span><b>Profil</b><small>Kenalan lagi, versi papan klip</small><span class="mcard-go">→</span></a>
+      <a class="mcard" href="#/galeri" data-reveal style="--d:7"><span class="mcard-blob blob--yellow"><span class="eyes"><i></i><i></i></span></span><b>Galeri</b><small>30 momen kecil</small><span class="mcard-go">→</span></a>
+      <a class="mcard" href="#/kuis" data-reveal style="--d:8"><span class="mcard-blob blob--mint"><span class="eyes"><i></i><i></i></span></span><b>Kuis</b><small>Jawab benar semua, ada hadiah</small><span class="mcard-go">→</span></a>
+      <a class="mcard" href="#/surat" data-reveal style="--d:9"><span class="mcard-blob blob--blue"><span class="eyes"><i></i><i></i></span></span><b>Surat</b><small>Satu surat buat kamu</small><span class="mcard-go">→</span></a>
+    </nav>
+  </section>
+
+  <!-- CERITA -->
+  <section class="view section" data-view="cerita" id="cerita" hidden>
+    <div class="section-head" data-reveal>
+      <p class="label">01 · cerita kita</p>
+      <h2>Dari lorong kampus,<br>sampai Riau–Jakarta.</h2>
+    </div>
+    <ol class="timeline" id="timeline"></ol>
+    <a class="next-link" href="#/profil" data-reveal>Lanjut: Profil <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- PROFIL -->
+  <section class="view section section--tint" data-view="profil" id="profil" hidden>
+    <div class="section-head" data-reveal>
+      <p class="label">02 · profil</p>
+      <h2>Kenalan lagi,<br>versi papan klip.</h2>
+    </div>
+    <div class="boards" id="boards"></div>
+    <a class="next-link" href="#/galeri" data-reveal>Lanjut: Galeri <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- GALERI -->
+  <section class="view section" data-view="galeri" id="galeri" hidden>
+    <div class="section-head section-head--row" data-reveal>
+      <div>
+        <p class="label">03 · galeri</p>
+        <h2>Simpanan<br>momen kecil.</h2>
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="Filter galeri"></div>
+    </div>
+    <div class="masonry" id="masonry"></div>
+    <a class="next-link" href="#/kuis" data-reveal>Lanjut: Kuis <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- KUIS -->
+  <section class="view section section--tint" data-view="kuis" id="kuis" hidden>
+    <div class="section-head" data-reveal>
+      <p class="label">04 · kuis</p>
+      <h2>Jawab semua dengan benar,<br>ada hadiahnya.</h2>
+    </div>
+    <div class="quiz" id="quiz" data-reveal>
+      <div class="quiz-top">
+        <p class="quiz-step" id="quizStep">01 / 06</p>
+        <div class="quiz-bar"><span id="quizBar"></span></div>
+      </div>
+      <div class="quiz-stage" id="quizStage"></div>
+    </div>
+    <a class="next-link" href="#/surat" data-reveal>Lanjut: Surat <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+
+  <!-- SURAT -->
+  <section class="view section" data-view="surat" id="surat" hidden>
+    <div class="section-head" data-reveal>
+      <p class="label">05 · surat</p>
+      <h2>Satu surat,<br>buka pelan-pelan.</h2>
+    </div>
+    <div class="letter-wrap" data-reveal>
+      <button class="envelope" id="envelope" type="button" aria-expanded="false" aria-controls="letter">
+        <span class="env-back"></span>
+        <span class="env-paper"><span class="env-paper-line"></span><span class="env-paper-line"></span><span class="env-paper-line short"></span></span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="env-seal"><i></i><i></i></span>
+        <span class="env-cta">ketuk untuk buka</span>
+      </button>
+      <article class="letter" id="letter" hidden>
+        <p class="letter-to">Untuk Kamu,</p>
+        <div class="letter-body" id="letterBody"></div>
+        <p class="letter-sign">— orca</p>
+        <button class="btn btn--ghost letter-close" id="letterClose" type="button">Lipat lagi</button>
+      </article>
+    </div>
+    <a class="next-link" href="#/" data-reveal>Balik ke beranda <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+
+  <footer class="footer">
+    <svg class="footer-wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V20 Q 30 0 60 20 T 120 20 T 180 20 T 240 20 T 300 20 T 360 20 T 420 20 T 480 20 T 540 20 T 600 20 T 660 20 T 720 20 T 780 20 T 840 20 T 900 20 T 960 20 T 1020 20 T 1080 20 T 1140 20 T 1200 20 T 1260 20 T 1320 20 T 1380 20 T 1440 20 V40Z"/></svg>
+    <div class="footer-inner">
+      <div>
+        <a class="logo" href="#/"><span class="logo-mark"><i></i><i></i></span><span class="logo-text">bagus &amp; shecil<small>jakarta — riau</small></span></a>
+        <p class="footer-note">Dibuat pelan-pelan, buat dibuka berkali-kali.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#/cerita">Cerita</a><a href="#/profil">Profil</a><a href="#/galeri">Galeri</a><a href="#/kuis">Kuis</a><a href="#/surat">Surat</a>
+      </nav>
+      <div class="blob blob--pink footer-blob" aria-hidden="true"><div class="eyes"><i></i><i></i></div></div>
+    </div>
+    <p class="footer-copy">© bagus &amp; shecillia · sejak 09.12.2024</p>
+  </footer>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto">
+  <button class="lb-close" id="lbClose" aria-label="Tutup">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto sebelumnya">←</button>
+  <figure class="lb-figure"><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Foto berikutnya">→</button>
+</div>
+
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+<audio id="bgm" src="assets/music/wings.mp3" loop preload="auto"></audio>
+<button class="music" id="musicBtn" type="button" hidden aria-pressed="false" aria-label="Putar lagu">
+  <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="music-text"><b>Wings</b><small>SoYoON × Phum Viphurit</small></span>
+</button>
+<script src="app.js"></script>
+</body>
+</html>

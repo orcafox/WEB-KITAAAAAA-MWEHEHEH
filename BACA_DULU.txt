@@ -1,0 +1,10 @@
+LOVE WEBSITE — Bagus & Shecillia (versi baru)
+
+Cara buka: klik dua kali index.html (Chrome / Edge / Safari).
+Login: username "bagus" atau "shecillia", password 091224.
+
+Mau ganti isi? Semua teks ada di bagian atas app.js (objek DATA):
+- timeline, profil, kuis + jawaban, hadiah, isi surat.
+Tiap menu punya halaman sendiri (alamat #/cerita, #/profil, #/galeri, #/kuis, #/surat).
+Foto galeri: assets/photos (besar) dan assets/thumbs (kecil), nama p01.jpg ... p30.jpg.
+Lagu: assets/music/wings.mp3
